@@ -21,8 +21,22 @@ module.exports = (sequelize, DataTypes) => {
     idade: DataTypes.INTEGER,
     cpf: DataTypes.STRING,
     telefone: DataTypes.STRING,
-    email: DataTypes.STRING,
-    endereco: DataTypes.STRING
+    email: {
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false,
+      validate: {
+        isEmail: true
+      }
+    },
+    endereco: DataTypes.STRING,
+    senha: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [6, 100] // mínimo 6 caracteres
+      }
+    }
   }, {
     sequelize,
     modelName: 'Cliente',

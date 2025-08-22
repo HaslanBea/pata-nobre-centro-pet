@@ -230,7 +230,17 @@ npx sequelize-cli model:generate --name Agendamento --attributes petId:integer,s
 
 ---
 
+Próximo desafio: CRUD
 
+CRUD significa:
+
+Create → criar registros
+
+Read → ler registros
+
+Update → atualizar registros
+
+Delete → deletar registros
 
 
 
