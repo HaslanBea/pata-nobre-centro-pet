@@ -163,15 +163,74 @@ app.listen(port, () => {
 ```
 ---
 
-# Aqui 
+# Banco de Dados 🎲
+
+#### Aqui vamos criar o modelos, que seria os dados como nome, idade, cpf conato do cliente e dados dos pet's. 
+
+#### E as demais tabelas como a de serviços, para esta criaçao e decidi usar os comandos no terminal com npx sequelize-cli, uma ferramenta poderosa e que facilita toda digitaçao.
+
+#### Para iniciar no nosso projeto:
+
+```
+npm install --save-dev sequelize-cli
+npx sequelize-cli init
+```
+
+#### sso vai criar a estrutura básica:
+
+#### config/
+#### models/
+#### migrations/
+#### seeders/
+
+
+#### config/ → arquivo de configuração do banco (config.json)
+
+#### models/ → modelos do Sequelize
+#### migrations/ → arquivos que criam/alteram tabelas
+#### seeders/ → para popular dados iniciais
+
+## No config/config.json, coloque algo assim:
+
+```
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "./database.sqlite"
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": ":memory:"
+  },
+  "production": {
+    "dialect": "sqlite",
+    "storage": "./database.sqlite"
+  }
+}
+
+```
+
+# Para a Criaçao das Tabelas
+
+```
+CLIENTE;
+npx sequelize-cli model:generate --name Cliente --attributes nome:string,idade:integer,cpf:string,telefone:string,email:string,endereco:string
+
+PET'S;
+npx sequelize-cli model:generate --name Pet --attributes nome:string,especie:string,raca:string,idade:integer,clienteId:integer
+
+SERVIÇOS;
+npx sequelize-cli model:generate --name Servico --attributes nome:string,descricao:string,preco:decimal
+
+AGENDAMENTOS;
+npx sequelize-cli model:generate --name Agendamento --attributes petId:integer,servicoId:integer,data:date,status:string
+
+```
+
 
 ---
 
-cria a conexçao sequelize centralizada 
-Criar os modelos Cliente.js, Pet.js, Servico.js
-Define colunas, tipos, restrições e relacionamentos.
-Definir relacionamentos entre modelos.
-precisa do gitingnore para a pasta node_modules
+
 
 
 
