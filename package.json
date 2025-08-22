@@ -4,7 +4,8 @@
   "description": "Projeto “Pata Nobre – Centro Pet”: um sistema completo de petshop que integra usabilidade, design visual, funcionalidades de API, back-end, banco de dados e muito mais. A evolução do projeto será contínua, com foco em boas práticas e aprendizado passo a passo.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
