@@ -171,6 +171,7 @@ cria a conexçao sequelize centralizada
 Criar os modelos Cliente.js, Pet.js, Servico.js
 Define colunas, tipos, restrições e relacionamentos.
 Definir relacionamentos entre modelos.
+precisa do gitingnore para a pasta node_modules
 
 
 
