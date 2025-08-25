@@ -259,66 +259,31 @@ router.post('/', async (req, res) => {
   }
 });
 ```
+
+### Para Buscar um Cliente
+
 #### Voce cria um objeto, chamado de **const cliente**, que recebe uma espera assíncrona, marcada pelo **await**, e esse **await** aguarda a conclusão de uma operação que usa o **ORM (Object-Relational Mapping)** do modelo do cliente, o **Cliente**. Em outras palavras, você está chamando o método **create** do modelo **Cliente** como **Cliente.create(...)**. O que entra como parâmetro nesse **create(...)** é o corpo da requisição **(req.body)**, ou seja, os dados enviados pelo cliente **(nome, email, telefone, etc.)**. Assim, quando a operação assíncrona completa, ela retorna o registro recém-criado, que é atribuído à constante **cliente**. Se der algum erro, o fluxo caí no bloco de erro do **try/catch**.
-
-#### Cliente:
-#### ✅ post - create
-#### ✅ get - buscar
-#### ✅ put - edit por id
-#### ✅ delet - delete pir id 
-#### ✅ get - buscar por id
 ---
+### Primeiro, para a atualização do cliente:
+
+#### Você começa com o título do método HTTP, o router.put('/:id', async (req, res) => { ... }).
+#### Dentro, há uma operação assíncrona que busca o cliente pelo ID passado na URL: const cliente = await Cliente.findByPk(req.params.id);.
+#### Em seguida, há uma verificação: se não houver nenhum cliente encontrado, o código responde com um status 404 e uma mensagem {"error": "Cliente não encontrado"}.
+#### Se o cliente existir, o código chama await cliente.update(req.body); para atualizar os campos com os dados enviados no corpo da requisição.
+#### Depois disso, res.json(cliente); envia o objeto atualizado de volta na resposta.
+#### Caso ocorra algum erro durante o processo, o fluxo cai no catch e responde com res.status(400).json({ error: error.message });.
+---
+### Em seguida, para a deleção do cliente:
+
+#### O código usa o router.delete('/:id', async (req, res) => { ... }), iniciando com a busca pelo ID: const cliente = await Cliente.findByPk(req.params.id);.
+#### Novamente, se o cliente não for encontrado, o código retorna 404 com a mensagem {"error": "Cliente não encontrado"}.
+#### Se o cliente existe, ele é removido do banco com await cliente.destroy(); e a resposta é um objeto JSON com a mensagem de sucesso: {"message": "Cliente deletado com sucesso"}.
+#### Qualquer erro lança a exceção para o catch, que responde com res.status(500).json({ error: error.message });.
+
 ---
 
-Criar todas as rotas CRUD (Cliente, Pet, Serviço, Agendamento) → próximo passo;
 
-ROTAS
-
-Cliente:
-✅ post - create
-✅ get - buscar
-✅ put - edit por id
-✅ delet - delete pir id 
-✅ get - buscar por id
-
-Pet:
-✅post - create 
-✅get - buscar
-✅put - editar por id 
-✅get - buscar por id
-✅delete - delete por id
-
-serviços:
-✅post - create 
-✅get - buscar
-✅put - editar por id 
-✅get - buscar por id
-✅delete - delete por id
-
-agendamento:
-✅post - create 
-✅get - buscar
-✅put - editar por id 
-✅get - buscar por id
-✅delete - delete por id 
-
-
-
-Testar todas as rotas no Postman → garantir que tudo funciona
-
+---
 Conectar o front-end usando fetch → consumir essas rotas
 
 Criar o front-end completo → HTML, CSS e JS, usando os dados das rotas
-
---- 
-✅ Dicas para seguir o checklist
-
-Crie cada arquivo de rotas separado (clientes.js, pets.js, etc.)
-
-Implemente CRUD básico primeiro, sem autenticação
-
-Teste cada rota no Postman antes de passar para a próxima
-
-Depois adicione hash da senha e JWT nas rotas de Cliente
-
-Só então parta para a conexão com o front-end
