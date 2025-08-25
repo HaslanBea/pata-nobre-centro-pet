@@ -4,6 +4,8 @@ const { Sequelize } = require("sequelize");
 const app = express();
 const port = 3000;
 
+app.use(express.json());
+
 // Conectar no banco SQLite
 const sequelize = new Sequelize({
   dialect: "sqlite",
@@ -18,6 +20,9 @@ sequelize.authenticate()
 app.get("/", (req, res) => {
   res.send("API do PetShop está rodando 🐾");
 });
+
+// Rotas
+app.use('/clientes', require('./routes/clientes'));
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);

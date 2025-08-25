@@ -216,6 +216,8 @@ npx sequelize-cli init
 CLIENTE;
 npx sequelize-cli model:generate --name Cliente --attributes nome:string,idade:integer,cpf:string,telefone:string,email:string,endereco:string
 
+obs: foi criado o campo senha, para login do usuario no site.
+
 PET'S;
 npx sequelize-cli model:generate --name Pet --attributes nome:string,especie:string,raca:string,idade:integer,clienteId:integer
 
@@ -229,18 +231,90 @@ npx sequelize-cli model:generate --name Agendamento --attributes petId:integer,s
 
 
 ---
+# Para as Rotas  
 
-Próximo desafio: CRUD
+#### Vamos criar uma pasta chamada, "routes" que vai conter todos os arquivos das rotas dos modelos(Cliente, Pets, etc...), nisso cada arquivo vai ter o CRUD(Create, Edit, Delete, etc...).
 
-CRUD significa:
+## Clientes
 
-Create → criar registros
+#### Nome do arquivo "clientes.js", nele vamos criar os endpoits do CRUD iniciando pela criaçao de um novo usario.
 
-Read → ler registros
+#### Vamos importar o modelo e a ferramenta certa:
 
-Update → atualizar registros
+```
+const express = require('express'); //Importa um frameowrk para a aplicaçao.
+const router = express.Router(); //Cria um route que pode montar um conjuto de rotas e ajuda a modularizzar a aplicaçao.
+const { Cliente } = require('../models') //Importa o modelo do cliente.
+```
+#### Para a criaçao da primeira rota:
 
-Delete → deletar registros
+```
+// Criar Cliente
+router.post('/', async (req, res) => {
+  try {
+    const cliente = await Cliente.create(req.body);
+    res.status(201).json(cliente);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+```
+#### Voce cria um objeto, chamado de **const cliente**, que recebe uma espera assíncrona, marcada pelo **await**, e esse **await** aguarda a conclusão de uma operação que usa o **ORM (Object-Relational Mapping)** do modelo do cliente, o **Cliente**. Em outras palavras, você está chamando o método **create** do modelo **Cliente** como **Cliente.create(...)**. O que entra como parâmetro nesse **create(...)** é o corpo da requisição **(req.body)**, ou seja, os dados enviados pelo cliente **(nome, email, telefone, etc.)**. Assim, quando a operação assíncrona completa, ela retorna o registro recém-criado, que é atribuído à constante **cliente**. Se der algum erro, o fluxo caí no bloco de erro do **try/catch**.
+---
+---
+
+Criar todas as rotas CRUD (Cliente, Pet, Serviço, Agendamento) → próximo passo;
+
+ROTAS
+
+Cliente:
+✅ post - create
+✅ get - buscar
+✅ put - edit por id
+✅ delet - delete pir id 
+✅ get - buscar por id
+
+Pet:
+post - create 
+get - buscar
+put - editar por id 
+get - buscar por id
+delete - delete por id
+
+serviços:
+post - create 
+get - buscar 
+get - buscar por id 
+put - edit por id 
+delete - delete por id
+
+agendamento:
+post - create
+get - buscar
+get - buscar por id
+put - editar por id
+delete - deletar por id 
+
+20 rotas pendentes 
+00 rotas criadas 
+00 rotas testadas
 
 
+Testar todas as rotas no Postman → garantir que tudo funciona
 
+Conectar o front-end usando fetch → consumir essas rotas
+
+Criar o front-end completo → HTML, CSS e JS, usando os dados das rotas
+
+--- 
+✅ Dicas para seguir o checklist
+
+Crie cada arquivo de rotas separado (clientes.js, pets.js, etc.)
+
+Implemente CRUD básico primeiro, sem autenticação
+
+Teste cada rota no Postman antes de passar para a próxima
+
+Depois adicione hash da senha e JWT nas rotas de Cliente
+
+Só então parta para a conexão com o front-end
