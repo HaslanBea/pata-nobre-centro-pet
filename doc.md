@@ -260,6 +260,13 @@ router.post('/', async (req, res) => {
 });
 ```
 #### Voce cria um objeto, chamado de **const cliente**, que recebe uma espera assíncrona, marcada pelo **await**, e esse **await** aguarda a conclusão de uma operação que usa o **ORM (Object-Relational Mapping)** do modelo do cliente, o **Cliente**. Em outras palavras, você está chamando o método **create** do modelo **Cliente** como **Cliente.create(...)**. O que entra como parâmetro nesse **create(...)** é o corpo da requisição **(req.body)**, ou seja, os dados enviados pelo cliente **(nome, email, telefone, etc.)**. Assim, quando a operação assíncrona completa, ela retorna o registro recém-criado, que é atribuído à constante **cliente**. Se der algum erro, o fluxo caí no bloco de erro do **try/catch**.
+
+#### Cliente:
+#### ✅ post - create
+#### ✅ get - buscar
+#### ✅ put - edit por id
+#### ✅ delet - delete pir id 
+#### ✅ get - buscar por id
 ---
 ---
 
@@ -275,11 +282,11 @@ Cliente:
 ✅ get - buscar por id
 
 Pet:
-post - create 
-get - buscar
-put - editar por id 
-get - buscar por id
-delete - delete por id
+✅post - create 
+✅get - buscar
+✅put - editar por id 
+✅get - buscar por id
+✅delete - delete por id
 
 serviços:
 post - create 
@@ -295,9 +302,9 @@ get - buscar por id
 put - editar por id
 delete - deletar por id 
 
-20 rotas pendentes 
-00 rotas criadas 
-00 rotas testadas
+10 rotas pendentes 
+10 rotas criadas 
+10 rotas testadas
 
 
 Testar todas as rotas no Postman → garantir que tudo funciona
