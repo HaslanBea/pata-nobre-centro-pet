@@ -289,22 +289,19 @@ Pet:
 ✅delete - delete por id
 
 serviços:
-post - create 
-get - buscar 
-get - buscar por id 
-put - edit por id 
-delete - delete por id
+✅post - create 
+✅get - buscar
+✅put - editar por id 
+✅get - buscar por id
+✅delete - delete por id
 
 agendamento:
-post - create
-get - buscar
-get - buscar por id
-put - editar por id
-delete - deletar por id 
+✅post - create 
+✅get - buscar
+✅put - editar por id 
+✅get - buscar por id
+✅delete - delete por id 
 
-10 rotas pendentes 
-10 rotas criadas 
-10 rotas testadas
 
 
 Testar todas as rotas no Postman → garantir que tudo funciona

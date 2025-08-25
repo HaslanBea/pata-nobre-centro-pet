@@ -25,6 +25,7 @@ app.get("/", (req, res) => {
 app.use('/clientes', require('./routes/clientes'));
 app.use('/pets', require('./routes/pets'));
 app.use('/servicos', require('./routes/servicos'));
+app.use('/agendamentos', require('./routes/agendamento'));
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
