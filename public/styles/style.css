@@ -1,3 +1,18 @@
 /* cor do site #1b203b */
 
 
+.card-img-top {
+  height: 220px;      /* ajuste conforme necessário */
+  object-fit: cover;  /* faz o "zoom" para preencher o espaço */
+}
+
+.btn-outline-primary {
+  color: #1b203b !important;
+  border-color: #1b203b !important;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+  background-color: #1b203b !important;
+  color: #fff !important;
+  border-color: #1b203b !important;
+}

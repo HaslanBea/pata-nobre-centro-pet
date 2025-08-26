@@ -20,16 +20,10 @@
 
     <div id="hero"></div>
 
-    <div id="about"></div>"
+    <div id="about"></div>
 
-    <section id="about" style="height: 100vh;">
-        <h1>Sobre nós</h1>
-        <!-- Conteúdo sobre -->
-    </section>
-    <section id="service" style="height: 100vh;">
-        <h1>Serviços</h1>
-        <!-- Conteúdo serviços -->
-    </section>
+    <div id="service"></div>
+
     <section id="contato" style="height: 100vh;">
         <h1>Contato</h1>
         <!-- Conteúdo contato -->
@@ -66,6 +60,12 @@
         .then(response => response.text())
         .then(data => {
         document.getElementById('about').innerHTML = data;
+      });
+
+      fetch('public/componentes/service.html')
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById('service').innerHTML = data;
       });
 
     </script>
