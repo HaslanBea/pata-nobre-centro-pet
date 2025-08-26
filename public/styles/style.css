@@ -16,3 +16,12 @@
   color: #fff !important;
   border-color: #1b203b !important;
 }
+
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(27,32,59,0.2);
+}
