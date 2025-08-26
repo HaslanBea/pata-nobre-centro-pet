@@ -287,3 +287,18 @@ router.post('/', async (req, res) => {
 Conectar o front-end usando fetch → consumir essas rotas
 
 Criar o front-end completo → HTML, CSS e JS, usando os dados das rotas
+
+
+/meu-projeto
+│── index.html
+│── /componentes
+│    └── services.js   (fetch CRUD de serviços)
+│    └── pets.js       (fetch CRUD de pets)
+│    └── clientes.js   (fetch CRUD de clientes)
+│    └── agendamentos.js (fetch CRUD de agendamentos)
+│── /public
+│    └── /styles
+│         └── style.css
+│── /img 
+     └── logo.png
+     └── header.jpg

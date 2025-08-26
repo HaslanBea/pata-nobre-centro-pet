@@ -1,0 +1,42 @@
+body, .navbar, .nav-link, .navbar-brand, h1 {
+  color: #fff !important;
+}
+
+.fonte-limelight {
+  font-family: 'Limelight', cursive;
+  font-size: 3rem;
+}
+
+.btn-navbar {
+  min-width: 120px;
+  height: 40px;
+  font-size: 1rem;
+  padding: 0.375rem 1rem;
+}
+
+.navbar, .navbar-brand, .fonte-limelight, .btn-navbar, .nav-link, .navbar-toggler, .navbar-toggler-icon {
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+.btn-navbar {
+  background: transparent;
+  color: #fff !important; /* cor da letra */
+  border: 1px solid #fff;
+}
+
+.btn-navbar:hover, .btn-navbar:focus {
+  color: #1b203b !important; /* cor da letra ao passar o mouse */
+  background: #fff !important; /* fundo branco ao passar o mouse */
+  border: 1px solid #fff;
+}
+
+.navbar-toggler {
+  border-color: #ffffff8c;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* cor do site #1b203b */
