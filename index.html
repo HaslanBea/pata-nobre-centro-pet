@@ -18,6 +18,8 @@
 <body>
     <div id="navbar"></div>
 
+    <div id="hero"></div>
+
     <section id="about" style="height: 100vh;">
         <h1>Sobre nós</h1>
         <!-- Conteúdo sobre -->
@@ -52,6 +54,12 @@
         .then(data => {
           document.getElementById('navbar').innerHTML = data;
         });
+      fetch('public/componentes/hero.html')
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById('hero').innerHTML = data;
+      });
+
     </script>
 </body>
 </html>
