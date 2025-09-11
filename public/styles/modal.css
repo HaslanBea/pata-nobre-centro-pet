@@ -1,0 +1,77 @@
+.input-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input {
+  border: solid 1.5px #9e9e9e;
+  border-radius: 1rem;
+  background: none;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #000;
+  width: 100%;
+}
+
+.user-label {
+  position: absolute;
+  left: 15px;
+  color: #9e9e9e;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 0.3s ease all;
+}
+
+.input:focus ~ .user-label,
+.input:valid ~ .user-label {
+  transform: translateY(-50%) scale(0.9);
+  background-color: #fff;
+  padding: 0 .3em;
+  color: #1b203b;
+}
+
+/* Botão estilizado exclusivo para o modal */
+.btn-modal-form {
+  width: 140px;
+  height: 50px;
+  background: linear-gradient(to top, #00154c, #12376e, #23487f);
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.btn-modal-form span {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: top 0.5s;
+}
+
+.btn-modal-form .btn-text-one {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.btn-modal-form .btn-text-two {
+  position: absolute;
+  width: 100%;
+  top: 150%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.btn-modal-form:hover .btn-text-one {
+  top: -100%;
+}
+
+.btn-modal-form:hover .btn-text-two {
+  top: 50%;
+}

@@ -1,13 +1,60 @@
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Login</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Cadastro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formCadastro">
+
+          <div class="input-group">
+            <input required type="text" class="input" id="username">
+            <label class="user-label" for="username">Seu nome</label>
           </div>
-          <div class="modal-body">
-            <p>Em breve: opção de criar ou entrar em uma conta.</p>
+
+          <div class="input-group">
+            <input required type="number" class="input" id="idade">
+            <label class="user-label" for="idade">Idade</label>
           </div>
-        </div>
+
+          <div class="input-group">
+            <input required type="tel" class="input" id="telefone">
+            <label class="user-label" for="telefone">Telefone</label>
+          </div>
+
+          <div class="input-group">
+            <input required type="text" class="input" id="cpf">
+            <label class="user-label" for="cpf">CPF</label>
+          </div>
+
+          <div class="input-group">
+            <input required type="text" class="input" id="endereco">
+            <label class="user-label" for="endereco">Endereço</label>
+          </div>
+
+          <div class="input-group">
+            <input required type="email" class="input" id="email">
+            <label class="user-label" for="email">Email</label>
+          </div>
+
+          <div class="input-group">
+            <input required type="password" class="input" id="password">
+            <label class="user-label" for="password">Senha</label>
+          </div>
+
+          <!-- Botão Cadastrar -->
+            <div class="d-flex justify-content-center mt-3">
+                <button type="submit" class="btn-modal-form">
+                    <span class="btn-text-one">Cadastrar</span>
+                    <span class="btn-text-two">Enviar</span>
+                </button>
+            </div>
+
+
+
+        </form>
       </div>
     </div>
+  </div>
+</div>
