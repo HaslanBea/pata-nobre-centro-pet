@@ -237,17 +237,55 @@ Conectar o front-end usando fetch → consumir essas rotas
 
 Criar o front-end completo → HTML, CSS e JS, usando os dados das rotas
 
-
-/meu-projeto
-│── index.html
-│── /componentes
-│    └── services.js   (fetch CRUD de serviços)
-│    └── pets.js       (fetch CRUD de pets)
-│    └── clientes.js   (fetch CRUD de clientes)
-│    └── agendamentos.js (fetch CRUD de agendamentos)
+```
+/PATA-NOBRE-CENTRO-PET
+│── /config
+│    └── config.js
+│── /migrations
+│    └── 20250822171934-create-cliente.js
+│    └── 20250822171936-create-pet.js
+│    └── 20250822171936-create-servico.js
+│    └── 20250822171936-create-agendamento.js
+│── /models
+│    └── agendamento.js
+│    └── cliente.js
+│    └── pet.js
+│    └── servico.js
+│── /pages
+│    └── servicos.html(esta vazio)
 │── /public
-│    └── /styles
-│         └── style.css
-│── /img 
-     └── logo.png
-     └── header.jpg
+│    └── / componentes
+│         └── about.html
+│         └── carrosel.html
+│         └── feedbacks.html
+│         └── modal.html
+│         └── footer.html
+│         └── hero.html
+│         └── navbar.html
+│         └── patinhas.html
+│         └── service.html
+│         └── whatssap
+│    └── / img
+│    └── / styles
+│         └── footer.css
+│         └── modal.css
+│         └── navbar.css
+│         └── styles.css
+│         └── whatssap.css
+│── /routes
+│    └── agendamento.js
+│    └── pet.js
+│    └── clientes.js
+│    └── servicos.js
+│── /seeders
+│── .gitignore
+│── database.sqlite
+│── /doc.md
+│── index.html
+│── package-lock.json
+│── packege.json
+│── README.md
+│── server.js
+```
+
+---
