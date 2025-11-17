@@ -289,3 +289,10 @@ Criar o front-end completo → HTML, CSS e JS, usando os dados das rotas
 ```
 
 ---
+
+Agora vamos criar a parte do logins dos clientes, a ideia e fazer uma validaçao em uma pagina somente para o login, e pedir os dados do cliente, em seguida ele seria levado ao uma pagina que teria a interaçao de cadastrar um pet, e a solicitaçao de serviços, para essa primeira parte fizemos uma alteraçao no modelo do cliente onde adicionamos uma funçao que pudesse verificar a senha digitada pelo cliente no ato do cadastro, para isso usamos a funçao da biblioteca bcrytp chamada compareSync, ela verifica a senha e o hash para saber se sao os mesmos. 
+
+no final do modelo vamos adiconar dois hooks, um para a criaçao de um novo cliente e o outro para quando for atualizar este cliente, verificando esta senha antes de sr criptografada, usamos tambem o SALT seria uma proteçao extra, tambem na biblioteca do bcrypt vamos usar a funçao hashSync e passar o cliente.this, salt como parametro onde transforma a senha em hash protegendo o site de hackers. 
+
+O mesmo sera feito no hook que atualiza os clientes, sera verificado e validado. 
+
