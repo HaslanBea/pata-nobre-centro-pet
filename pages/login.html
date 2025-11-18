@@ -1,90 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login • Patas Nobres</title>
 
-  
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../public/styles/login.css">
 
   <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <!-- ILUSTRAÇÃO -->
-  <div class="img-box">
-    <img src="/public/img/dog-login.jpg" alt="Cachorro fofo">
-  </div>
+    <div class="login-container">
+      <div class="login-left">
+        <button class="tab-btn active" id="btnLoginTab">Login</button>
+        <button class="tab-btn" id="btnCadastroTab">Sign Up</button>
+      </div>
 
-  <!-- CARD LOGIN/CADASTRO -->
-  <div class="form-box">
-    <div class="forms">
+      <div class="login-right">
 
-      <!-- LOGIN -->
-      <form id="loginForm" class="form active">
-        <h2>Entrar</h2>
+        <!-- LOGIN FORM -->
+        <form id="loginForm" class="form active">
+          <h2>LOGIN</h2>
 
-        <label>Email</label>
-        <input type="email" id="loginEmail" required>
+          <input type="email" id="loginEmail" placeholder="Email" required>
+          <input type="password" id="loginPassword" placeholder="Senha" required>
 
-        <label>Senha</label>
-        <input type="password" id="loginPassword" required>
+          <button type="submit" class="btn-login">Entrar</button>
+        </form>
 
-        <button type="submit" class="btn-gold">Entrar</button>
+        <!-- CADASTRO FORM -->
+        <form id="cadastroForm" class="form">
+          <h2>CRIAR CONTA</h2>
 
-        <p class="switch">
-          Não tem conta? <span onclick="toggleForms()">Cadastrar</span>
-        </p>
-      </form>
+          <input type="text" id="cadNome" placeholder="Nome">
+          <input type="number" id="cadIdade" placeholder="Idade">
+          <input type="text" id="cadTelefone" placeholder="Telefone">
+          <input type="text" id="cadCpf" placeholder="CPF">
+          <input type="text" id="cadEndereco" placeholder="Endereço">
+          <input type="email" id="cadEmail" placeholder="Email">
+          <input type="password" id="cadSenha" placeholder="Senha">
 
-      <!-- CADASTRO -->
-      <form id="cadastroForm" class="form">
-        <h2>Cadastrar</h2>
+          <button type="submit" class="btn-login">Cadastrar</button>
+        </form>
 
-        <label>Nome</label>
-        <input type="text" id="cadNome" required>
-
-        <label>Idade</label>
-        <input type="number" id="cadIdade" required>
-
-        <label>Telefone</label>
-        <input type="tel" id="cadTelefone" required>
-
-        <label>CPF</label>
-        <input type="text" id="cadCpf" required>
-
-        <label>Endereço</label>
-        <input type="text" id="cadEndereco" required>
-
-        <label>Email</label>
-        <input type="email" id="cadEmail" required>
-
-        <label>Senha</label>
-        <input type="password" id="cadSenha" required>
-
-        <button type="submit" class="btn-gold">Cadastrar</button>
-
-        <p class="switch">
-          Já possui conta? <span onclick="toggleForms()">Entrar</span>
-        </p>
-      </form>
-
+      </div>
     </div>
-  </div>
 
-</div>
+    <script>
+      function toggleForms() {
+        document.querySelectorAll('.form').forEach(f => f.classList.toggle('active'));
+      }
 
-<script>
-function toggleForms() {
-  document.querySelectorAll('.form').forEach(f => f.classList.toggle('active'));
-}
+    </script>
 
-</script>
+    <script src="../public/js/login.js"></script>
 
-<script src="../public/js/login.js"></script>
+    <script>
+      const btnLoginTab = document.getElementById("btnLoginTab");
+      const btnCadastroTab = document.getElementById("btnCadastroTab");
+      const loginForm = document.getElementById("loginForm");
+      const cadastroForm = document.getElementById("cadastroForm");
+
+      btnLoginTab.addEventListener("click", () => {
+        btnLoginTab.classList.add("active");
+        btnCadastroTab.classList.remove("active");
+        loginForm.classList.add("active");
+        cadastroForm.classList.remove("active");
+      });
+
+      btnCadastroTab.addEventListener("click", () => {
+        btnCadastroTab.classList.add("active");
+        btnLoginTab.classList.remove("active");
+        cadastroForm.classList.add("active");
+        loginForm.classList.remove("active");
+      });
+    </script>
+
 
 </body>
+
 </html>

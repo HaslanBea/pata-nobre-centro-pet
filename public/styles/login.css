@@ -1,113 +1,98 @@
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #1b203b; /* fundo azul escuro */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    background: #1b203b;
+    font-family: "Poppins", sans-serif;
 }
 
-/* CONTAINER PRINCIPAL */
-.container {
-  width: 900px;
-  height: 550px;
-  background: #ffffff;
-  display: flex;
-  border-radius: 25px;
-  overflow: hidden;
-  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+.login-container {
+    width: 900px;
+    margin: 60px auto;
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,0,0,0.3);
 }
 
-/* ILUSTRAÇÃO */
-.img-box {
-  flex: 1;
-  background: #1b203b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* LADO ESQUERDO */
+.login-left {
+    width: 35%;
+    background: linear-gradient(135deg, #1b203b 0%, #2a2f55 100%);
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.img-box img {
-  width: 90%;
-  max-width: 420px;
-  border-radius: 100px;
+.tab-btn {
+    width: 150px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid gold;
+    color: gold;
+    font-weight: bold;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* ÁREA DE FORMULÁRIOS */
-.form-box {
-  flex: 1;
-  padding: 50px;
-  position: relative;
+.tab-btn.active {
+    background: gold;
+    color: #1b203b;
 }
 
-.forms {
-  position: relative;
-  width: 100%;
-  height: 100%;
+/* LADO DIREITO */
+.login-right {
+    width: 65%;
+    padding: 50px;
 }
 
-/* FORMULÁRIO */
+/* FORM */
 .form {
-  position: absolute;
-  width: 100%;
-  opacity: 0;
-  transform: translateX(40px);
-  transition: 0.4s ease;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .form.active {
-  opacity: 1;
-  transform: translateX(0);
+    display: flex;
 }
 
 .form h2 {
-  margin: 0 0 20px;
-  color: #1b203b;
-  font-size: 28px;
-}
-
-.form label {
-  font-size: 14px;
-  color: #1b203b;
-  font-weight: 600;
+    color: #1b203b;
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 700;
 }
 
 .form input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 12px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
 }
 
-/* BOTÃO DOURADO */
-.btn-gold {
-  width: 100%;
-  padding: 12px;
-  background: #1b203b; /* dourado */
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s;
+.form input:focus {
+    border-bottom: 2px solid gold;
 }
 
-.btn-gold:hover {
-  background: #1b203b;
+/* BOTÃO */
+.btn-login {
+    background: gold;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1b203b;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
 }
 
-/* TROCA ENTRE LOGIN/CADASTRO */
-.switch {
-  margin-top: 15px;
-  text-align: center;
-  color: #1b203b;
-}
-
-.switch span {
-  color: #1b203b;
-  cursor: pointer;
-  font-weight: bold;
+.btn-login:hover {
+    background: rgb(255, 220, 60);
 }
