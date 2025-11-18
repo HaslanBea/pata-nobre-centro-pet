@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #1b203b; /* fundo azul escuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+  width: 900px;
+  height: 550px;
+  background: #ffffff;
+  display: flex;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+/* ILUSTRAÇÃO */
+.img-box {
+  flex: 1;
+  background: #1b203b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-box img {
+  width: 90%;
+  max-width: 420px;
+  border-radius: 100px;
+}
+
+/* ÁREA DE FORMULÁRIOS */
+.form-box {
+  flex: 1;
+  padding: 50px;
+  position: relative;
+}
+
+.forms {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* FORMULÁRIO */
+.form {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: 0.4s ease;
+}
+
+.form.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.form h2 {
+  margin: 0 0 20px;
+  color: #1b203b;
+  font-size: 28px;
+}
+
+.form label {
+  font-size: 14px;
+  color: #1b203b;
+  font-weight: 600;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* BOTÃO DOURADO */
+.btn-gold {
+  width: 100%;
+  padding: 12px;
+  background: #1b203b; /* dourado */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-gold:hover {
+  background: #1b203b;
+}
+
+/* TROCA ENTRE LOGIN/CADASTRO */
+.switch {
+  margin-top: 15px;
+  text-align: center;
+  color: #1b203b;
+}
+
+.switch span {
+  color: #1b203b;
+  cursor: pointer;
+  font-weight: bold;
+}
