@@ -29,8 +29,8 @@ body {
     width: 150px;
     padding: 12px 20px;
     border-radius: 25px;
-    border: 2px solid gold;
-    color: gold;
+    border: 1px solid #fff;
+    color: #fff;
     font-weight: bold;
     background: transparent;
     cursor: pointer;
@@ -38,9 +38,15 @@ body {
 }
 
 .tab-btn.active {
-    background: gold;
+    background: #fff;
     color: #1b203b;
 }
+
+.tab-btn:hover {
+    background: #fff;
+    color: #1b203b;
+}
+
 
 /* LADO DIREITO */
 .login-right {
@@ -81,8 +87,8 @@ body {
 
 /* BOTÃO */
 .btn-login {
-    background: gold;
-    border: none;
+    background: transparent;
+    border: 1px solid #1b203b;
     padding: 12px;
     border-radius: 25px;
     font-size: 16px;
@@ -93,6 +99,18 @@ body {
     transition: 0.3s;
 }
 
+/* Hover igual ao Navbar */
 .btn-login:hover {
-    background: rgb(255, 220, 60);
+    background: #1b203b;
+    color: #fff;
+}
+
+
+.logo-login {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-bottom: 20px;
 }
